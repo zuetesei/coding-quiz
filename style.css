@@ -44,6 +44,7 @@
     width: 15rem;
     margin: 1rem;
     border-radius: 5px;
+    text-decoration: none;
     color: antiquewhite;
     background: linear-gradient(90deg, rgba(164,51,125,0.8271276595744681) 44%, rgba(255,0,142,0.8111702127659575) 78%);
 }
@@ -55,8 +56,12 @@
     transform: scale(1);
 }
 
-.btn[:disabled]:hover {
+.btn[disabled]:hover {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+}
+.fa-crown {
+    font-size: 1.4rem;
+    margin-left: 0.5rem;
 }
