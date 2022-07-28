@@ -5,6 +5,8 @@ const choice3 = document.querySelector('.choice-text-3');
 const choice4 = document.querySelector('.choice-text-4');
 const scoreText = document.querySelector('#score');
 
+let shuffledQuestions, currentQuestionIndex
+
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 60
@@ -54,13 +56,15 @@ let questionsArray = [
     }
 ];
 
-
 function displayQuestion() {
-    var currentQuestion = Array[0].question
+    var currentQuestion = questionsArray[0].question
     question.textContent = currentQuestion
     console.log(currentQuestion)
 
      // how do we change question? 
+     function setNextQuestion() {
+
+    }
 }
 
 function displayAnswers() {
