@@ -11,28 +11,28 @@
 <body>
     <div class="container">
         <div class="timer"> 
-            <p> Time: 60 </p>
+            <p id="score"> Time: 60 </p>
         </div>
         <div id="game" class="justify-center flex-column">
             <h1 id="questions"> Question 1 </h1>
             <div class="choice-container">
                 <p class="choice-prefix"> A </p>
-                <p class="choice-text" data-number="1"> Choice Details </p>
+                <p onclick="checkAnswer(event)" class="choice-text-1" data-number="1"> Choice Details </p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix"> B </p>
-                <p class="choice-text" data-number="2"> Choice 2 Details </p>
+                <p onclick="checkAnswer(event)" class="choice-text-2" data-number="2"> Choice 2 Details </p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix"> C </p>
-                <p class="choice-text" data-number="3"> Choice 3 Details </p>
+                <p onclick="checkAnswer(event)" class="choice-text-3" data-number="3"> Choice 3 Details </p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix"> D </p>
-                <p class="choice-text" data-number="4"> Choice 4 Details </p>
+                <p onclick="checkAnswer(event)" class="choice-text-4" data-number="4"> Choice 4 Details </p>
             </div>
         </div>
     </div>
-    
+    <script src="game.js"></script>
 </body>
 </html>
