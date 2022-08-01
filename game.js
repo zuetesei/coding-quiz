@@ -1,4 +1,5 @@
-// Setting up all required elements as constants 
+// Setting up all required elements as constants
+var start = document.querySelector('.btn-start') 
 var question = document.querySelector('#questions');
 var choices = document.querySelector('.choice-text');
 var scoreText = document.querySelector('#score');
@@ -7,6 +8,50 @@ var choice1 = document.querySelector('#choice-option-1');
 var choice2 = document.querySelector('#choice-option-2');
 var choice3 = document.querySelector('#choice-option-3');
 var choice4 = document.querySelector('#choice-option-4');
+
+// Question & Answer Set 
+var questionsArray = [
+    {
+        question: 'Javascript is an _____ language?',
+        choice1: 'object-oriented',
+        choice2: 'object-based',
+        choice3: 'professional',
+        choice4: 'foreign',
+        answer: 'object-oriented',
+    },
+    {
+        question: 'Which of the following keywords is used to define a variable in JavaScript?',
+        choice1: 'let',
+        choice2: 'function',
+        choice3: 'var',
+        choice4: 'const',
+        answer: 'var',
+    },
+    {
+        question: 'Which of the following methods is used to access HTML elements using JavaScript?',
+        choice1: 'getElementbyClassName()',
+        choice2: 'getElementbyID()',
+        choice3: 'document.querySelector()',
+        choice4: 'A & B',
+        answer: 'A & B',
+    },
+    {
+        question: 'What does the JavaScript debugger statement do?',
+        choice1: 'It will debug all the errors in the program.',
+        choice2: 'It will debug error in the current statement',
+        choice3: 'It acts a breakpoint in a program',
+        choice4: 'All of the above',
+        answer: 'It acts a breakpoint in a program',
+    },
+    {
+        question: 'How can a datatype be declared to be a constant type?',
+        choice1: 'var',
+        choice2: 'const',
+        choice3: 'constant',
+        choice4: 'let',
+        answer: 'const',
+    }
+];
 
 var currentQuestion = {};
 var acceptingAnswers = true;
@@ -89,49 +134,6 @@ function startTime() {
     }, 1000 );
 }
 
-// Question & Answer Set 
-let questionsArray = [
-    {
-        question: 'Javascript is an _____ language?',
-        choice1: 'object-oriented',
-        choice2: 'object-based',
-        choice3: 'professional',
-        choice4: 'foreign',
-        answer: 'object-oriented',
-    },
-    {
-        question: 'Which of the following keywords is used to define a variable in JavaScript?',
-        choice1: 'let',
-        choice2: 'function',
-        choice3: 'var',
-        choice4: 'const',
-        answer: 'var',
-    },
-    {
-        question: 'Which of the following methods is used to access HTML elements using JavaScript?',
-        choice1: 'getElementbyClassName()',
-        choice2: 'getElementbyID()',
-        choice3: 'document.querySelector()',
-        choice4: 'A & B',
-        answer: 'A & B',
-    },
-    {
-        question: 'What does the JavaScript debugger statement do?',
-        choice1: 'It will debug all the errors in the program.',
-        choice2: 'It will debug error in the current statement',
-        choice3: 'It acts a breakpoint in a program',
-        choice4: 'All of the above',
-        answer: 'It acts a breakpoint in a program',
-    },
-    {
-        question: 'How can a datatype be declared to be a constant type?',
-        choice1: 'var',
-        choice2: 'const',
-        choice3: 'constant',
-        choice4: 'let',
-        answer: 'const',
-    }
-];
 
 // Function Calls 
 displayQuestion();

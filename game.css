@@ -2,37 +2,3 @@ body {
     color: rgb(54, 69, 79);
 }
 
-.choice-container{
-    display: flex; 
-    margin-bottom: 1rem;
-    width: 100%;
-    border-radius: 4px;
-    font-size: 20px;
-    background: palevioletred;
-    min-width: 30rem;
-}
-.choice-container:hover{
-    cursor: pointer;
-    box-shadow: 1px 3px 50px 7px rgba(232,6,100,0.54);
-    transform: scale(1);
-    transform: transform 100ms;
-}
-.choice-prefix{
-    padding: 1rem 1rem;
-    color:antiquewhite;
-}
-.choice-text{
-    width: 100%;
-    padding: 10px;
-}
-.correct {
-    background: linear-gradient(90deg, rgba(158,221,26,0.8271276595744681) 21%, rgba(123,222,23,0.8111702127659575) 60%);
-}
-.incorrect {
-    background: linear-gradient(90deg, rgba(221,26,26,1) 30%, rgba(222,52,23,0.8111702127659575) 68%);
-}
-@media screen and (max-width: 768px) {
-    .choice-container {
-        min-width: 40rem;
-    }
-}
