@@ -12,49 +12,8 @@
     <div class="container">
         <div id="home" class="flex-column flex-center"> 
             <h1> Coding Quiz Challenge </h1>
-            <a class="btn-start"> Start </a>
-            <a href="high-scores.html" id= "highscore-btn" class="btn-hs"> High Scores <i class="fa-solid fa-crown"></i></a>
-        </div>
-    </div>
-
-    <div class="container d-flex justify-content-center">
-        
-        <div class="quiz-header timer d-flex justify-content-end"> 
-            <p id="score"> Time: 60 </p>
-            <h1 id="displayed-question"> Question </h1>
-        </div>
-
-        <div id="game-btns" class="buttons justify-center flex-column">
-            <button class="btn" id="btn0"> 
-                A. <span id="choice0"></span>
-            </button>
-            <button class="btn" id="btn1"> 
-                B. <span id="choice1"></span>
-            </button>
-            <button class="btn" id="btn2"> 
-                C. <span id="choice2"></span>
-            </button>
-            <button class="btn" id="btn3"> 
-                D. <span id="choice3"></span>
-            </button>
-
-
-            <div  onclick="checkAnswer(event)" class="choice-container">
-                <p class="choice-prefix"> A </p>
-                <p id="choice-option-1" class="choice-text" data-number="1"> Choice Details </p>
-            </div>
-            <div onclick="checkAnswer(event)" class="choice-container">
-                <p class="choice-prefix"> B </p>
-                <p  id="choice-option-2" class="choice-text" data-number="2"> Choice 2 Details </p>
-            </div>
-            <div onclick="checkAnswer(event)" class="choice-container">
-                <p class="choice-prefix"> C </p>
-                <p id="choice-option-3" class="choice-text" data-number="3"> Choice 3 Details </p>
-            </div>
-            <div onclick="checkAnswer(event)" class="choice-container">
-                <p class="choice-prefix"> D </p>
-                <p id="choice-option-4" class="choice-text" data-number="4"> Choice 4 Details </p>
-            </div>
+            <a href="game.html" class="btn-start"> Start </a>
+            <a id= "highscore-btn" class="btn-hs"> High Scores <i class="fa-solid fa-crown"></i></a>
         </div>
     </div>
     
