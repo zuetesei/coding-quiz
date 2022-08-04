@@ -9,14 +9,36 @@
     <script src="https://kit.fontawesome.com/83aacc2b97.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container start-screen">
         <div id="home" class="flex-column flex-center"> 
             <h1> Coding Quiz Challenge </h1>
-            <a href="game.html" class="btn-start"> Start </a>
+            <a id="start-btn" class="btn-start"> Start </a>
             <a id= "highscore-btn" class="btn-hs"> High Scores <i class="fa-solid fa-crown"></i></a>
         </div>
     </div>
     
+    <div id="quiz-screen" class="hide container d-flex justify-content-center">
+        <div class="quiz-header timer d-flex justify-content-end"> 
+            <p id="timer"> Time: 60 </p>
+            <h1 id="displayed-question"> Question </h1>
+        </div>
+        
+        <div id="game-btns" class="buttons justify-center flex-column">
+            <!-- <button onclick=checkAnswer() class="btn" id="btn0"> 
+                A. <span id="choice0"></span>
+            </button>
+            <button onclick=checkAnswer() class="btn" id="btn1"> 
+                B. <span id="choice1"></span>
+            </button>
+            <button onclick=checkAnswer() class="btn" id="btn2"> 
+                C. <span id="choice2"></span>
+            </button>
+            <button onclick=checkAnswer() class="btn" id="btn3"> 
+                D. <span id="choice3"></span>
+            </button> -->
+        </div>
+    </div>
+
     <script src="game.js"></script>
 </body>
 </html>

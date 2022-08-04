@@ -1,14 +1,11 @@
 // Setting up all required elements as constants
-var startButton = document.querySelector('.btn-start') 
+var startButton = document.getElementById('start-btn') 
 var questionEl = document.querySelector('#displayed-question');
 var questionAnswers = document.querySelector('#game-btns');
 var newQuestion 
 var scoreText = document.querySelector('#timer');
 var currentIndex = 0
-var choiceA = document.getElementById('choice0');
-var choiceB = document.getElementById('choice1');
-var choiceC = document.getElementById('choice2');
-var choiceD = document.getElementById('choice3');
+var answerEl = document.getElementById('game-btns');
 
 // Question & Answer Set 
 var questionsArr = [
@@ -41,19 +38,26 @@ var questionsArr = [
 ];
 
 var currentQuestion = {};
-var score = 60
+// var score = 60
 // var questionCounter = 0 
-var availableQuestions = []
+// var availableQuestions = []
 
 // Setting up the functions 
 function startQuiz() {
     console.log("game start")
+    var startScreen = document.querySelector('.start-screen')
+    startScreen.setAttribute('class', 'hide')
+    var quizScreen = document.querySelector('#quiz-screen')
+    quizScreen.classList.remove('hide')
+
     newQuestion = questionsArr[currentIndex]
     score = 60 
-    startTime ()
-    displayQuestion ()
+    startTime()
+    displayQuestion()
     // getNewQuestion()
 }
+
+startButton.onclick = startQuiz
 
 function startTime() {
     var timeLeft = setInterval(() => {
@@ -64,38 +68,77 @@ function startTime() {
 }
 
 function displayQuestion() {
-    
+    // clear out answers 
+    answerEl.innerHTML=""
+
+    var currentQuestionObj = questionsArr[currentIndex]
+    console.log(currentQuestionObj)
     var currentQuestion = questionsArr[currentIndex].title
     questionEl.textContent = currentQuestion
     console.log(currentQuestion)   
 
-    var currentAnswers = questionsArr[currentIndex].choices 
-    choiceA.textContent = questionsArr[currentIndex].choices[0]
-    choiceB.textContent = questionsArr[currentIndex].choices[1]
-    choiceC.textContent = questionsArr[currentIndex].choices[2]
-    choiceD.textContent = questionsArr[currentIndex].choices[3]
+    for (var i=0; i < currentQuestionObj.choices.length; i++) {
+        var choice = currentQuestionObj.choices[i]
+        var choiceButton = document.createElement("button") 
+        choiceButton.setAttribute("value", choice)
+        choiceButton.setAttribute("class", "btn")
+        choiceButton.textContent = `${i+1}. ${choice}` 
+        answerEl.appendChild(choiceButton)
+    }
+
+    // // var currentAnswers = questionsArr[currentIndex].choices 
+    // choiceA.textContent = questionsArr[currentIndex].choices[0]
+    // choiceB.textContent = questionsArr[currentIndex].choices[1]
+    // choiceC.textContent = questionsArr[currentIndex].choices[2]
+    // choiceD.textContent = questionsArr[currentIndex].choices[3]
 }
 
-for (currentIndex = 0; currentIndex < questionsArr.length; currentIndex++) {
-    console.log(questionsArr[currentIndex].title);
+function checkAnswer (event) {
+    var userAnswer = event.target
+    var correctAnswer = questionsArr[currentIndex].answer
+    console.log(userAnswer)
+    console.log(correctAnswer)
 }
 
-// function getNewQuestion () {
-    
+// function checkAnswer(event) {
+//     var userAnswer =  event.target.innerText
+//     var correctAnswer = questionsArray[0].answer
+//     console.log(correctAnswer)
+//     console.log(userAnswer)
+//     // check answers 
+//     // if correct answer, get next question 
+//     if (userAnswer === correctAnswer) { 
+//         //go next question
+//         console.log('correct answer!')
+//         getNewQuestion() 
+//     } else { // if incorrect answer, get next question and subtract 10sec from score
+//         // go next question
+//         console.log('wrong answer!')
+//         getNewQuestion() 
+//         // subtract 10 from score 
+//     }
 // }
 
 
-// function getNewQuestion() {
-//     for (var i=0); i < maxQuestions; i++ 
+// function getNewQuestion () {
+//     currentIndex++
+//     newQuestion = questionsArr[currentIndex].title
+//     questionEl.textContent = newQuestion
+// }
+
+// for (currentIndex = 0; currentIndex < questionsArr.length; currentIndex++) {
+//     console.log(questionsArr[currentIndex].title);
+// }
+
+// check answer function 
+// if user clicks correct answer where choice = questionsArr[answer] 
+    // then get new question 
+
     
-//     // check answers
-//     if (response == questions[i].answer) {
-//         alert("Correct!");
-//         getNewQuestion(); 
-//     }  else {
-//         alert("Wrong!"); 
-//         getNewQuestion();
-//     }
+    // if user clicks wrong answer where choice /= questionsArr[answer]
+    // subtract 10 from score 
+    // get new question
+
 
 //  function getNewQuestion() {
 //     console.log(availableQuestions.length)
@@ -118,24 +161,7 @@ for (currentIndex = 0; currentIndex < questionsArr.length; currentIndex++) {
 //     }
 //     }
 
-// function checkAnswer(event) {
-//     var userAnswer =  event.target.innerText
-//     var correctAnswer = questionsArray[0].answer
-//     console.log(correctAnswer)
-//     console.log(userAnswer)
-//     // check answers 
-//     // if correct answer, get next question 
-//     if (userAnswer === correctAnswer) { 
-//         //go next question
-//         console.log('correct answer!')
-//         getNewQuestion() 
-//     } else { // if incorrect answer, get next question and subtract 10sec from score
-//         // go next question
-//         console.log('wrong answer!')
-//         getNewQuestion() 
-//         // subtract 10 from score 
-//     }
-// }
 
 // startTime();
-startQuiz();
+
+// startQuiz();
