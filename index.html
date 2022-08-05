@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Quiz Page </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/83aacc2b97.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container start-screen">
+        <div id="home" class="flex-column flex-center"> 
+            <h1> Coding Quiz Challenge </h1>
+            <a id="start-btn" class="btn-start"> Start </a>
+        </div>
+    </div>
+    
+    <div id="quiz-screen" class="hide container">
+        <div class="quiz-header"> 
+            <div class="timer"> <p id="timer"> Time: 60 </p> </div>
+            <h1 id="displayed-question"> Question </h1>
+        </div>
+        
+        <div id="game-btns" class="buttons justify-center flex-column">
+           
+        </div>
+    </div>
+
+    <div id="score-screen" class="user-score modal hidden">  
+        <!-- <p id="display-current-score"> Your Score: </p> -->
+        <label for="name">Enter your name: </label>
+        <input type="text" name="name" id="name" required>
+        <button onclick="userScore()" type="button" id="save-btn"> Save Score </button>
+    </div>
+
+    <div id="highscore-screen" class="highscore-card hidden">
+        <h1> High Scores: </h1>
+        <ol id="highscore-list">
+
+        </ol>
+        <button type="button" class="btn-restart" id="restart"> Restart </button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

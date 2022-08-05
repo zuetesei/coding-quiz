@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    background-color: antiquewhite;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Righteous";
+    color: rgb(54, 69, 79);
+}
+body {
+    color: rgb(54, 69, 79);
+}
+
+.hide {
+    display: none; 
+}
+.hidden {
+    visibility: hidden;
+}
+
+.container {
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+
+.timer {
+    margin-bottom: 2rem;
+    font-size: 18px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-start,
+.btn-restart {
+    font-size: 22px;
+    text-align: center;
+    padding: 1rem 0; 
+    width: 15rem;
+    margin: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: antiquewhite;
+    background: linear-gradient(90deg, rgba(164,51,125,0.8271276595744681) 44%, rgba(255,0,142,0.8111702127659575) 78%);
+}
+
+.btn-start:hover,
+.btn-restart {
+    cursor: pointer;
+    box-shadow: 10px 3px 37px 7px rgba(232,6,100,0.54);
+    transition: transform 150ms;
+    transform: scale(1);
+}
+
+
+button {
+    display: flex; 
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 20px;
+    background: palevioletred;
+    min-width: 30rem;
+}
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 1px 3px 50px 7px rgba(232,6,100,0.54);
+    transform: scale(1);
+    transform: transform 100ms;
+}
+.correct {
+    background: linear-gradient(90deg, rgba(158,221,26,0.8271276595744681) 21%, rgba(123,222,23,0.8111702127659575) 60%);
+}
+.incorrect {
+    background: linear-gradient(90deg, rgba(221,26,26,1) 30%, rgba(222,52,23,0.8111702127659575) 68%);
+}
+.user-score {
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+#save-btn {
+    margin-top: 1em;
+    width: 20px;
+    font-size: 16px;
+    display: block;
+}
+#highscore-screen {
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+#highscore-list {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+@media screen and (max-width: 768px) {
+    .choice-container {
+        min-width: 40rem;
+    }
+}
