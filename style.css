@@ -18,17 +18,20 @@ body {
 .hide {
     display: none; 
 }
+.hidden {
+    visibility: hidden;
+}
 
 .container {
-    width: 100vw;
     height: 100vh;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding-top: 100px;
+    padding-left: 25rem;
+    padding-right: 25rem;
 }
+
 .timer {
     margin-bottom: 2rem;
+    font-size: 18px;
 }
 
 .flex-column {
@@ -49,8 +52,8 @@ body {
     text-align: center;
 }
 
-.btn-start, 
-.btn-hs {
+.btn-start,
+.btn-restart {
     font-size: 22px;
     text-align: center;
     padding: 1rem 0; 
@@ -63,23 +66,13 @@ body {
 }
 
 .btn-start:hover,
-.btn-hs:hover {
+.btn-restart {
     cursor: pointer;
     box-shadow: 10px 3px 37px 7px rgba(232,6,100,0.54);
     transition: transform 150ms;
     transform: scale(1);
 }
 
-.btn-start[disabled]:hover, 
-.btn-hs[disabled]:hover {
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-}
-.fa-crown {
-    font-size: 1.4rem;
-    margin-left: 0.5rem;
-}
 
 button {
     display: flex; 
@@ -101,6 +94,28 @@ button {
 }
 .incorrect {
     background: linear-gradient(90deg, rgba(221,26,26,1) 30%, rgba(222,52,23,0.8111702127659575) 68%);
+}
+.user-score {
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+#save-btn {
+    margin-top: 1em;
+    width: 20px;
+    font-size: 16px;
+    display: block;
+}
+#highscore-screen {
+    height: 100vh;
+    padding-top: 100px;
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+#highscore-list {
+    margin-top: 1em;
+    margin-left: 1em;
 }
 @media screen and (max-width: 768px) {
     .choice-container {

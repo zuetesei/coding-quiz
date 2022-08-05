@@ -5,6 +5,10 @@ var questionAnswers = document.querySelector('#game-btns');
 var scoreText = document.querySelector('#timer');
 var currentIndex = 0
 var answerEl = document.getElementById('game-btns');
+var quizScreen = document.querySelector('#quiz-screen')
+var saveScoreBtn = document.getElementById('save-btn')
+var score = 60 
+var highscoreListEl = document.getElementById('highscore-list')
 
 // Question & Answer Set 
 var questionsArr = [
@@ -49,7 +53,6 @@ function startQuiz() {
     var startScreen = document.querySelector('.start-screen')
     startScreen.setAttribute('class', 'hide')
     // display quiz screen
-    var quizScreen = document.querySelector('#quiz-screen')
     quizScreen.classList.remove('hide')
     // time starts at 60 seconds 
     score = 60 
@@ -58,10 +61,21 @@ function startQuiz() {
     displayQuestion()
 }
 
+function endQuiz() {
+    var scoreScreen = document.querySelector('#score-screen')
+    quizScreen.classList.add('hide')
+    scoreScreen.classList.remove('hidden')
+}
+
 startButton.onclick = startQuiz
 
 function startTime() {
     var timeLeft = setInterval(() => {
+        console.log(currentIndex)
+        if (currentIndex >= 6) {
+            clearInterval(timeLeft)
+            endQuiz()
+        }
         score--
         if (score <= 0) clearInterval(timeLeft)
         scoreText.textContent = "Time: " + score;
@@ -111,9 +125,42 @@ function checkAnswer (event) {
         // next question 
         currentIndex++
         displayQuestion()
-    }
+    } 
 }
 
-// startTime();
+// saveScoreBtn.onclick = userScore
 
-// startQuiz();
+// what to do with scores? seperate HTML or pop-up modal 
+var userScores = []
+var storedScores = JSON.parse(localStorage.getItem("currentScore"));
+
+function userScore() {
+    var userName = document.getElementById('name').value
+    console.log(userName)
+
+    if (userName.length > 0) {
+        var currentScore = {
+            name: userName,
+            score: score 
+        }
+        // console.log(currentScore)
+    
+        userScores.push(currentScore)
+        // console.log(userScores)
+        localStorage.setItem("currentScore", JSON.stringify(userScores));
+
+         // hide score-screen
+         var scoreScreen = document.querySelector('#score-screen')
+         scoreScreen.classList.add('hide')
+         
+         var highscoreScreen = document.querySelector('#highscore-screen')
+         highscoreScreen.classList.remove('hidden')
+         
+         for (var i=0; i < userScores.length; i++) {
+            var listItem = document.createElement("li")
+            listItem.textContent = userScores[i].name + " - " + userScores[i].score
+            highscoreListEl.appendChild(listItem)
+         }
+
+    }
+}
