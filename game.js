@@ -1,12 +1,14 @@
 // Setting up all required elements as constants
 var startButton = document.getElementById('start-btn') 
-var questionEl = document.querySelector('#displayed-question');
-var questionAnswers = document.querySelector('#game-btns');
-var scoreText = document.querySelector('#timer');
-var currentIndex = 0
-var answerEl = document.getElementById('game-btns');
-var quizScreen = document.querySelector('#quiz-screen')
 var saveScoreBtn = document.getElementById('save-btn')
+var restartBtn = document.getElementById ('restart')
+var questionEl = document.querySelector('#displayed-question')
+var questionAnswers = document.querySelector('#game-btns')
+var scoreText = document.querySelector('#timer')
+var displayScore = document.getElementById('display-current-score')
+var currentIndex = 0
+var answerEl = document.getElementById('game-btns')
+var quizScreen = document.querySelector('#quiz-screen')
 var score = 60 
 var highscoreListEl = document.getElementById('highscore-list')
 
@@ -74,6 +76,7 @@ function startTime() {
         console.log(currentIndex)
         if (currentIndex >= 6) {
             clearInterval(timeLeft)
+            alert("Your score is " + score + " !")
             endQuiz()
         }
         score--
@@ -135,16 +138,15 @@ var userScores = []
 var storedScores = JSON.parse(localStorage.getItem("currentScore"));
 
 function userScore() {
-    var userName = document.getElementById('name').value
-    console.log(userName)
+    var userName = document.getElementById('name').value 
+    // displayScore = currentScore.score
+    // scoreScreen.appendChild(displayScore)
 
     if (userName.length > 0) {
         var currentScore = {
             name: userName,
             score: score 
         }
-        // console.log(currentScore)
-    
         userScores.push(currentScore)
         // console.log(userScores)
         localStorage.setItem("currentScore", JSON.stringify(userScores));
@@ -152,7 +154,7 @@ function userScore() {
          // hide score-screen
          var scoreScreen = document.querySelector('#score-screen')
          scoreScreen.classList.add('hide')
-         
+         // show high scores 
          var highscoreScreen = document.querySelector('#highscore-screen')
          highscoreScreen.classList.remove('hidden')
          
@@ -164,3 +166,7 @@ function userScore() {
 
     }
 }
+
+restartBtn.addEventListener("click", function() {
+    location.reload();
+} )
